@@ -1,0 +1,25 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+
+#-- Run on single processor
+#runApplication `getApplication`#Why it throws following error:
+#./Allrun: 55: ./Allrun: somaFoam//plasmaSimFoam;: not found ????
+
+runApplication somaFoam
+
+# Decompose
+#runApplication decomposePar
+
+# Run
+#runParallel `getApplication`
+#runApplication mpirun -np 2 somaFoam -parallel
+
+# Reconstruct
+#runApplication reconstructPar
