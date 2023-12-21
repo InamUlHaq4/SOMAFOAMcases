@@ -1,0 +1,46 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     4.0                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      Phi;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [ 0 0 0 1 0 0 0 ];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    ground
+    {
+        type            fixedValue;
+        value           uniform 0;
+    }
+    electrode
+    {
+	type            fixedValue;
+        value           uniform 250;        
+	
+
+	/*type            plasmaPotential;//Try using fixedValue type to model constant voltage.
+        value           uniform 0;//250;
+        model           sinFrequencyModulated;
+        amplitude       uniform 10;//200
+        frequency       40E6;//0;//13.56
+        bias            50.0;*/
+    }
+    otherfaces
+    {
+        type            empty;
+    }
+}
