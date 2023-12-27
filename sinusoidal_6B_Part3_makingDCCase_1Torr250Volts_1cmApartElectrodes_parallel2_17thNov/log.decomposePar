@@ -1,0 +1,35 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     4.0                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  | For copyright notice see file Copyright         |
+\*---------------------------------------------------------------------------*/
+Build    : 4.0-c606a7c3f115
+Exec     : decomposePar
+Date     : Nov 17 2023
+Time     : 11:30:35
+Host     : inam-Z9PE-D16-Series
+PID      : 18181
+CtrlDict : "/home/inam/examples_SomaFOAM/helium-13point56MHz-1017_plasmaSimFoam/sinusoidal_6B_Part3_makingDCCase_1Torr250Volts_1cmApartElectrodes_parallel2_17thNov/system/controlDict"
+Case     : /home/inam/examples_SomaFOAM/helium-13point56MHz-1017_plasmaSimFoam/sinusoidal_6B_Part3_makingDCCase_1Torr250Volts_1cmApartElectrodes_parallel2_17thNov
+nProcs   : 1
+SigFpe   : Enabling floating point exception trapping (FOAM_SIGFPE).
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Time = 0
+
+
+--> FOAM FATAL ERROR: 
+Case is already decomposed with 2 domains, use the -force option or manually
+remove processor directories before decomposing. e.g.,
+    rm -rf /home/inam/examples_SomaFOAM/helium-13point56MHz-1017_plasmaSimFoam/sinusoidal_6B_Part3_makingDCCase_1Torr250Volts_1cmApartElectrodes_parallel2_17thNov/processor*
+
+
+    From function decomposePar
+    in file decomposePar.C at line 221.
+
+FOAM exiting
+
