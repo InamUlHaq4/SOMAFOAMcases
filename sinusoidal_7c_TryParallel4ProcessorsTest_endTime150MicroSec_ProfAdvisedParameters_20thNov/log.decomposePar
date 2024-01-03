@@ -1,0 +1,86 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     4.0                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  | For copyright notice see file Copyright         |
+\*---------------------------------------------------------------------------*/
+Build    : 4.0-c606a7c3f115
+Exec     : decomposePar
+Date     : Nov 20 2023
+Time     : 19:17:09
+Host     : inam-Z9PE-D16-Series
+PID      : 4219
+CtrlDict : "/home/inam/examples_SomaFOAM/helium-13point56MHz-1017_plasmaSimFoam/sinusoidal_7c_TryParallel4ProcessorsTest_endTime150MicroSec_ProfAdvisedParameters_20thNov/system/controlDict"
+Case     : /home/inam/examples_SomaFOAM/helium-13point56MHz-1017_plasmaSimFoam/sinusoidal_7c_TryParallel4ProcessorsTest_endTime150MicroSec_ProfAdvisedParameters_20thNov
+nProcs   : 1
+SigFpe   : Enabling floating point exception trapping (FOAM_SIGFPE).
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Time = 0
+Create mesh for region region0
+
+Calculating distribution of cells
+Selecting decompositionMethod metis
+
+Finished decomposition in 0.01 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Calculating processor boundary addressing
+
+Distributing points to processors
+
+Constructing processor meshes
+
+Processor 0
+    Number of cells = 508
+    Number of faces shared with processor 1 = 1
+    Number of processor patches = 1
+    Number of processor faces = 1
+    Number of boundary faces = 2033
+
+Processor 1
+    Number of cells = 511
+    Number of faces shared with processor 0 = 1
+    Number of faces shared with processor 3 = 1
+    Number of processor patches = 2
+    Number of processor faces = 2
+    Number of boundary faces = 2044
+
+Processor 2
+    Number of cells = 496
+    Number of faces shared with processor 3 = 1
+    Number of processor patches = 1
+    Number of processor faces = 1
+    Number of boundary faces = 1985
+
+Processor 3
+    Number of cells = 485
+    Number of faces shared with processor 1 = 1
+    Number of faces shared with processor 2 = 1
+    Number of processor patches = 2
+    Number of processor faces = 2
+    Number of boundary faces = 1940
+
+Number of processor faces = 3
+Max number of processor patches = 2
+Max number of faces between processors = 2
+Edepend = 1
+FE_ = 0
+Edepend = 1
+FE_ = 0
+
+Processor 0: field transfer
+Processor 1: field transfer
+Processor 2: field transfer
+Processor 3: field transfer
+
+End.
+

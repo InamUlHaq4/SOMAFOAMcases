@@ -1,0 +1,71 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     4.0                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  | For copyright notice see file Copyright         |
+\*---------------------------------------------------------------------------*/
+Build    : 4.0-c606a7c3f115
+Exec     : blockMesh
+Date     : Nov 20 2023
+Time     : 19:17:09
+Host     : inam-Z9PE-D16-Series
+PID      : 4218
+CtrlDict : "/home/inam/examples_SomaFOAM/helium-13point56MHz-1017_plasmaSimFoam/sinusoidal_7c_TryParallel4ProcessorsTest_endTime150MicroSec_ProfAdvisedParameters_20thNov/system/controlDict"
+Case     : /home/inam/examples_SomaFOAM/helium-13point56MHz-1017_plasmaSimFoam/sinusoidal_7c_TryParallel4ProcessorsTest_endTime150MicroSec_ProfAdvisedParameters_20thNov
+nProcs   : 1
+SigFpe   : Enabling floating point exception trapping (FOAM_SIGFPE).
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+Creating block mesh from
+    "/home/inam/examples_SomaFOAM/helium-13point56MHz-1017_plasmaSimFoam/sinusoidal_7c_TryParallel4ProcessorsTest_endTime150MicroSec_ProfAdvisedParameters_20thNov/constant/polyMesh/blockMeshDict"
+
+Creating curved edges
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 0.01
+    Block 0 cell size :
+        i : 3.35e-05 .. 3.3499999999993e-05
+        j : 0.067 .. 0.067
+        k : 0.067 .. 0.067
+
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (0 0 0) (0.067 0.067 0.067)
+  nPoints: 8004
+  nCells: 2000
+  nFaces: 10001
+  nInternalFaces: 1999
+----------------
+Patches
+----------------
+  patch 0 (start: 1999 size: 1) name: electrode
+  patch 1 (start: 2000 size: 1) name: ground
+  patch 2 (start: 2001 size: 8000) name: otherfaces
+
+End
+
