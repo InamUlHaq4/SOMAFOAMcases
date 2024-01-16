@@ -1,0 +1,39 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     4.0                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      p;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [ 0 0 0 1 0 0 0 ];
+
+internalField   uniform 13.3322;//101325;//101325 Pa = 760 Torr//13.3322 Pa is approx. 0.1 Torr//
+
+boundaryField
+{
+    ground
+    {
+        type            zeroGradient;
+    }
+    electrode
+    {
+        type            zeroGradient;
+    }
+    otherfaces
+    {
+        type            empty;
+    }
+}
+
+
+// ************************************************************************* //

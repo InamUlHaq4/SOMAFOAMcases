@@ -1,0 +1,54 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     4.0                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      electroMagnetics;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solutionDomain		plasma;
+
+poissonEquationSolver	semiImplicit;
+
+emcModel		power;
+
+spatioTemporal 		oneD;
+
+powerCoeffs
+{
+	mode 					continuousFrequencyModulated;
+	initialAmplitude			200;//Table 3, 200 V corresponds tp 0.1 Torr//100;
+	frequency 				13.56E6;
+	bias					0;
+	power 					3;//See code: If dampingFactor is zero, power value will not affect in any way. Why 3 ?density depends on power. Try 1, 0 etc and observe density response 0.5 etc
+	controlFrequency			1000;//13;//5120;//1;//13560000//Why 13 ??must be integer value (code uses readInt())//0;//just copied naturalFrequency//TRy 1000, 1, 13560000, 5120 (Ref 29 from somafoam paper)		0;//50 or 60 ? 0 may work but is not recommended (Inam)
+	dampingFactor				0.0;//0.005;//Try 0, no need for damping. Increases vlotage little bit
+	//waveform				sinusoidal;
+	//operation				symmetricalBipolar;
+	//dutyCycle				0;//confirmed
+	//naturalFrequency			0;
+	//dampingRatio				0;
+	//tolerance				2.5;//?
+	
+	geometricFactor				14.93;//0;///just copied dampingRatio (true if 0 value selected)//its ratio: Area/volume ratio	 i.e. 1/(distance between electrodes for 1D case i.e. 1/0.067 = 14.9253731343 = 14.93)	0;1/electrode distance for 1D case		
+}
+
+oneDCoeffs
+{
+	frequency		13.56E6;
+	outputInterval	5;
+	nCycles			2;
+	deltaT			5E-11;	
+}
+
+
+// ************************************************************************* //
